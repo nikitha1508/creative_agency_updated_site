@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CreativeAgency.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f5cb247f5c22c3543f286c47fed3a8f00d93f87")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5d883d125f64d07e70e19cf0c8e223bae4ff3e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CreativeAgency.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CreativeAgency.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

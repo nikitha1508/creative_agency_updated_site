@@ -17,7 +17,7 @@ public class ContactController : Controller
     [Route("contact", Name = "contact")]
     public IActionResult Index()
     {
-        return View(new ContactFormModel());
+        return View("~/Views/Contact/Index.cshtml", new ContactFormModel());
     }
 
     [HttpPost]
@@ -27,7 +27,7 @@ public class ContactController : Controller
         if (!ModelState.IsValid)
         {
             ViewBag.Message = "Please correct the highlighted fields and try again.";
-            return View(model);
+            return View("~/Views/Contact/Index.cshtml", model);
         }
 
         var filePath = Path.Combine(_environment.ContentRootPath, "contacts.json");
@@ -44,6 +44,6 @@ public class ContactController : Controller
 
         ViewBag.Message = "Thanks! Your message has been received and we will be in touch shortly.";
         ModelState.Clear();
-        return View(new ContactFormModel());
+        return View("~/Views/Contact/Index.cshtml", new ContactFormModel());
     }
 }
