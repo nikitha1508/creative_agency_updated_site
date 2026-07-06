@@ -1,0 +1,52 @@
+@model CreativeAgency.Web.Models.ContactFormModel
+@{
+    ViewData["Title"] = "Contact";
+    ViewData["Description"] = "Contact us for your next creative project.";
+}
+
+<h2>Contact Us</h2>
+<form asp-controller="Contact" asp-action="Index" method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EnquiryType">Enquiry Type</label>
+        <select asp-for="EnquiryType" class="form-select">
+            <option value="">Select</option>
+            <option value="General">General</option>
+            <option value="Services">Services</option>
+            <option value="Support">Support</option>
+        </select>
+        <span asp-validation-for="EnquiryType" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Summary">Summary</label>
+        <textarea asp-for="Summary" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="Summary" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success mt-3">@ViewBag.Message</div>
+}
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
