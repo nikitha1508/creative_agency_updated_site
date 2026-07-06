@@ -23,3 +23,9 @@ C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\obj\Deb
 C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\obj\Debug\net8.0\CreativeAgency.Web.dll
 C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\obj\Debug\net8.0\refint\CreativeAgency.Web.dll
 C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\obj\Debug\net8.0\CreativeAgency.Web.pdb
+C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\bin\Debug\net8.0\CreativeAgency.Web.deps.json
+C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\bin\Debug\net8.0\CreativeAgency.Web.runtimeconfig.json
+C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\bin\Debug\net8.0\CreativeAgency.Web.dll
+C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\bin\Debug\net8.0\CreativeAgency.Web.pdb
+C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\obj\Debug\net8.0\CreativeAgency.Web.genruntimeconfig.cache
+C:\Users\nikit\Downloads\creative_agency_updated_site\CreativeAgency.Web\obj\Debug\net8.0\ref\CreativeAgency.Web.dll
