@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Blog Detail";
+    ViewData["Description"] = "Read the full article from the Creative Agency blog.";
+    var slug = ViewBag.Slug?.ToString();
+}
+
+<div class="container my-4"><h2>Blog Detail</h2>
+@if (slug != null)
+{
+    <p>You are viewing: @slug</p>
+}
+else
+{
+    <p>Placeholder blog post</p>
+}
+</div>

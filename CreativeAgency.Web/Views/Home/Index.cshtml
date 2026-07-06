@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    ViewData["Description"] = "We help businesses grow with innovative marketing solutions.";
+}
+
+<div class="hero mb-4"></div>
+<h2>Welcome to Our Creative Agency</h2>
+<p>We help businesses grow with innovative marketing solutions.</p>
+<div class="row text-center">
+    <div class="col-md-3">
+        <a asp-controller="Home" asp-action="Services" asp-fragment="seo">
+            <img src="~/images/service_seo.jpg" class="img-fluid mb-2" alt="SEO Optimization">
+        </a>
+        <h5><a asp-controller="Home" asp-action="Services" asp-fragment="seo">SEO Optimization</a></h5>
+        <p>Boost your visibility online.</p>
+    </div>
+    <div class="col-md-3">
+        <a asp-controller="Home" asp-action="Services" asp-fragment="content">
+            <img src="~/images/service_content.jpg" class="img-fluid mb-2" alt="Content Marketing">
+        </a>
+        <h5><a asp-controller="Home" asp-action="Services" asp-fragment="content">Content Marketing</a></h5>
+        <p>Engage audiences with great content.</p>
+    </div>
+    <div class="col-md-3">
+        <a asp-controller="Home" asp-action="Services" asp-fragment="social">
+            <img src="~/images/service_social.jpg" class="img-fluid mb-2" alt="Social Media Management">
+        </a>
+        <h5><a asp-controller="Home" asp-action="Services" asp-fragment="social">Social Media Management</a></h5>
+        <p>Grow your brand on social platforms.</p>
+    </div>
+    <div class="col-md-3">
+        <a asp-controller="Home" asp-action="Services" asp-fragment="web">
+            <img src="~/images/service_web.jpg" class="img-fluid mb-2" alt="Web Development">
+        </a>
+        <h5><a asp-controller="Home" asp-action="Services" asp-fragment="web">Web Development</a></h5>
+        <p>Modern and responsive websites.</p>
+    </div>
+</div>
