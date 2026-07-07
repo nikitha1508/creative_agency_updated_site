@@ -1,61 +1,165 @@
 @{
     ViewData["Title"] = "Blog - Creative Agency";
-    ViewData["Description"] = "Browse our latest articles and insights on SEO, content marketing, social media, and web development.";
+    ViewData["Description"] = "Browse our latest articles and insights on SEO, web development and digital marketing.";
 }
 
+
 <!-- Breadcrumb -->
-<div class="breadcrumb-bar">
+<section class="breadcrumb-bar">
+
     <div class="container">
+
         <nav aria-label="breadcrumb">
+
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+
+                <li class="breadcrumb-item">
+                    <a asp-controller="Home" asp-action="Index">
+                        Home
+                    </a>
+                </li>
+
+                <li class="breadcrumb-item active">
+                    Blog
+                </li>
+
             </ol>
+
         </nav>
+
     </div>
+
+</section>
+
+
+
+<!-- Blog Section -->
+<section class="py-5">
+
+<div class="container">
+
+
+<h2 class="page-heading mb-5">
+    Latest Articles
+</h2>
+
+
+
+<div class="row">
+
+
+
+<!-- Blog 1 -->
+
+<div class="col-lg-6 mb-4">
+
+<div class="card shadow-sm h-100">
+
+
+<img src="~/images/blog1.jpg"
+     class="card-img-top blog-thumb"
+     alt="10 Tips for a Successful Business" />
+
+
+<div class="card-body">
+
+
+<h4 class="mt-3">
+    10 Tips for a Successful Business
+</h4>
+
+
+<p class="text-muted">
+    Admin | May 20, 2026
+</p>
+
+
+<p>
+    Discover the key strategies that help businesses grow successfully.
+    Learn how planning, customer satisfaction, digital presence,
+    marketing, and technology can improve your business growth.
+</p>
+
+
+
+<a asp-controller="Blog"
+   asp-action="Detail"
+   asp-route-slug="10-tips-for-a-successful-business"
+   class="btn btn-primary">
+
+    Read More
+
+</a>
+
+
 </div>
 
-<!-- Blog Listing -->
-<div class="container my-5">
-    <h2 class="page-heading mb-4">Blog</h2>
 
-    <!-- Post 1 -->
-    <div class="row g-4 mb-4 align-items-center blog-post-row">
-        <div class="col-md-4">
-            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="10-tips-for-a-successful-business">
-                <img src="~/images/service_web.jpg" class="img-fluid rounded blog-thumb" alt="10 Tips for a Successful Business" />
-            </a>
-        </div>
-        <div class="col-md-8">
-            <h5 class="fw-bold mb-1">
-                <a asp-controller="Blog" asp-action="Detail" asp-route-slug="10-tips-for-a-successful-business">
-                    10 Tips for a Successful Business
-                </a>
-            </h5>
-            <p class="blog-meta text-muted small mb-2">Admin &nbsp;|&nbsp; May 20, 2026</p>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="10-tips-for-a-successful-business" class="btn btn-primary btn-sm">Read More</a>
-        </div>
-    </div>
-
-    <hr class="my-4" />
-
-    <!-- Post 2 -->
-    <div class="row g-4 mb-4 align-items-center blog-post-row">
-        <div class="col-md-4">
-            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="how-to-improve-your-website-seo">
-                <img src="~/images/service_seo.jpg" class="img-fluid rounded blog-thumb" alt="How to Improve Your Website SEO" />
-            </a>
-        </div>
-        <div class="col-md-8">
-            <h5 class="fw-bold mb-1">
-                <a asp-controller="Blog" asp-action="Detail" asp-route-slug="how-to-improve-your-website-seo">
-                    How to Improve Your Website SEO
-                </a>
-            </h5>
-            <p class="blog-meta text-muted small mb-2">Admin &nbsp;|&nbsp; May 18, 2026</p>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="how-to-improve-your-website-seo" class="btn btn-primary btn-sm">Read More</a>
-        </div>
-    </div>
 </div>
+
+
+</div>
+
+
+
+
+
+<!-- Blog 2 -->
+
+<div class="col-lg-6 mb-4">
+
+<div class="card shadow-sm h-100">
+
+
+<img src="~/images/blog2.jpg"
+     class="card-img-top blog-thumb"
+     alt="How to Improve Your Website SEO" />
+
+
+<div class="card-body">
+
+
+<h4 class="mt-3">
+    How to Improve Your Website SEO
+</h4>
+
+
+<p class="text-muted">
+    Admin | May 18, 2026
+</p>
+
+
+<p>
+    Improve your website ranking with effective SEO techniques.
+    Learn about keywords, page speed, quality content,
+    mobile optimization, and search engine best practices.
+</p>
+
+
+
+<a asp-controller="Blog"
+   asp-action="Detail"
+   asp-route-slug="how-to-improve-seo"
+   class="btn btn-primary">
+
+    Read More
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+</section>

@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\images\\about-illustration.svg"
     },
     {
+      "Id": "C:\\Users\\nikit\\Downloads\\creative_agency_updated_site\\CreativeAgency.Web\\wwwroot\\images\\blog1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nikit\\Downloads\\creative_agency_updated_site\\CreativeAgency.Web\\wwwroot\\images\\blog2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog2.jpg"
+    },
+    {
       "Id": "C:\\Users\\nikit\\Downloads\\creative_agency_updated_site\\CreativeAgency.Web\\wwwroot\\images\\hero-illustration.svg",
       "PackagePath": "staticwebassets\\images\\hero-illustration.svg"
     },
