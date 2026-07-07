@@ -1,3 +1,27 @@
-<footer>
-    <p>&copy; 2025 Creative Agency. All rights reserved.</p>
+<footer class="py-4">
+    <div class="container text-center">
+        <div class="row mb-3">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h6 class="text-uppercase fw-bold mb-2">Creative Agency</h6>
+                <p class="small mb-0">Innovative marketing solutions for businesses that want to stand out.</p>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h6 class="text-uppercase fw-bold mb-2">Quick Links</h6>
+                <ul class="list-unstyled small mb-0">
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-controller="Home" asp-action="Services">Services</a></li>
+                    <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                    <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-uppercase fw-bold mb-2">Contact</h6>
+                <p class="small mb-1">&#9993; hello@creativeagency.com</p>
+                <p class="small mb-0">&#9742; +1 (800) 123-4567</p>
+            </div>
+        </div>
+        <hr class="border-secondary" />
+        <p class="small mb-0">&copy; @DateTime.Now.Year Creative Agency. All rights reserved.</p>
+    </div>
 </footer>

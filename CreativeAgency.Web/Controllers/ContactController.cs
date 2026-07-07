@@ -17,33 +17,56 @@ public class ContactController : Controller
     [Route("contact", Name = "contact")]
     public IActionResult Index()
     {
-        return View("~/Views/Contact/Index.cshtml", new ContactFormModel());
+        return View(new ContactFormModel());
     }
 
     [HttpPost]
+    [Route("contact")]
     [ValidateAntiForgeryToken]
     public IActionResult Index(ContactFormModel model)
     {
         if (!ModelState.IsValid)
         {
-            ViewBag.Message = "Please correct the highlighted fields and try again.";
-            return View("~/Views/Contact/Index.cshtml", model);
+            return View(model);
         }
 
+        // Build enriched entry with submission timestamp
+        var entry = new
+        {
+            model.FirstName,
+            model.LastName,
+            model.Email,
+            model.EnquiryType,
+            model.Summary,
+            SubmittedOn = DateTime.Now
+        };
+
         var filePath = Path.Combine(_environment.ContentRootPath, "contacts.json");
-        var entries = new List<ContactFormModel>();
+        var options = new JsonSerializerOptions { WriteIndented = true };
+
+        List<JsonElement> entries = new();
 
         if (System.IO.File.Exists(filePath))
         {
-            var existingJson = System.IO.File.ReadAllText(filePath);
-            entries = JsonSerializer.Deserialize<List<ContactFormModel>>(existingJson) ?? new List<ContactFormModel>();
+            try
+            {
+                var existingJson = System.IO.File.ReadAllText(filePath);
+                entries = JsonSerializer.Deserialize<List<JsonElement>>(existingJson, options)
+                          ?? new List<JsonElement>();
+            }
+            catch
+            {
+                entries = new List<JsonElement>();
+            }
         }
 
-        entries.Add(model);
-        System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true }));
+        // Serialize new entry and append
+        var entryJson = JsonSerializer.SerializeToElement(entry, options);
+        entries.Add(entryJson);
 
-        ViewBag.Message = "Thanks! Your message has been received and we will be in touch shortly.";
-        ModelState.Clear();
-        return View("~/Views/Contact/Index.cshtml", new ContactFormModel());
+        System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(entries, options));
+
+        TempData["Success"] = "Enquiry submitted successfully! We will be in touch shortly.";
+        return RedirectToAction("Index");
     }
 }

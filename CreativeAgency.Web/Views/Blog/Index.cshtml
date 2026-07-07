@@ -1,61 +1,61 @@
 @{
-    ViewData["Title"] = "Blog";
-    ViewData["Description"] = "Browse our latest articles and insights.";
+    ViewData["Title"] = "Blog - Creative Agency";
+    ViewData["Description"] = "Browse our latest articles and insights on SEO, content marketing, social media, and web development.";
 }
 
-<h2>Our Blog</h2>
-
-<div class="row mb-4">
-  <div class="col-md-6">
-    <label for="categoryFilter" class="form-label">Filter by Category</label>
-    <select id="categoryFilter" class="form-select">
-      <option value="all">All</option>
-      <option value="seo">SEO Optimization</option>
-      <option value="content">Content Marketing</option>
-      <option value="social">Social Media</option>
-      <option value="web">Web Development</option>
-    </select>
-  </div>
-  <div class="col-md-6">
-    <label for="sortDate" class="form-label">Sort by</label>
-    <select id="sortDate" class="form-select">
-      <option value="desc">Newest First</option>
-      <option value="asc">Oldest First</option>
-    </select>
-  </div>
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+            </ol>
+        </nav>
+    </div>
 </div>
 
-<div id="blogList">
-  <div class="blog-post" data-category="seo" data-date="2025-06-10">
-    <h4><a asp-controller="Blog" asp-action="Detail" asp-route-slug="how-seo-can-transform-your-business">How SEO Can Transform Your Business</a></h4>
-    <p>Discover how optimizing for search engines can bring in more traffic and conversions.</p>
-    <small>Published on: 10 June 2025</small>
-  </div>
-  <hr>
-  <div class="blog-post" data-category="content" data-date="2025-05-22">
-    <h4><a asp-controller="Blog" asp-action="Detail" asp-route-slug="content-is-still-king-in-2025">Content is Still King in 2025</a></h4>
-    <p>Great content continues to be the cornerstone of online marketing strategies.</p>
-    <small>Published on: 22 May 2025</small>
-  </div>
-  <hr>
-  <div class="blog-post" data-category="social" data-date="2025-06-01">
-    <h4><a asp-controller="Blog" asp-action="Detail" asp-route-slug="top-5-social-media-trends-this-year">Top 5 Social Media Trends This Year</a></h4>
-    <p>Stay ahead with these hot trends shaping social media engagement and reach.</p>
-    <small>Published on: 1 June 2025</small>
-  </div>
-  <hr>
-  <div class="blog-post" data-category="web" data-date="2025-06-15">
-    <h4><a asp-controller="Blog" asp-action="Detail" asp-route-slug="building-modern-websites-that-convert">Building Modern Websites That Convert</a></h4>
-    <p>Learn about UX/UI strategies that lead to higher engagement and conversions.</p>
-    <small>Published on: 15 June 2025</small>
-  </div>
-</div>
+<!-- Blog Listing -->
+<div class="container my-5">
+    <h2 class="page-heading mb-4">Blog</h2>
 
-<nav>
-  <ul class="pagination mt-4">
-    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
+    <!-- Post 1 -->
+    <div class="row g-4 mb-4 align-items-center blog-post-row">
+        <div class="col-md-4">
+            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="10-tips-for-a-successful-business">
+                <img src="~/images/service_web.jpg" class="img-fluid rounded blog-thumb" alt="10 Tips for a Successful Business" />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <h5 class="fw-bold mb-1">
+                <a asp-controller="Blog" asp-action="Detail" asp-route-slug="10-tips-for-a-successful-business">
+                    10 Tips for a Successful Business
+                </a>
+            </h5>
+            <p class="blog-meta text-muted small mb-2">Admin &nbsp;|&nbsp; May 20, 2026</p>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="10-tips-for-a-successful-business" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- Post 2 -->
+    <div class="row g-4 mb-4 align-items-center blog-post-row">
+        <div class="col-md-4">
+            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="how-to-improve-your-website-seo">
+                <img src="~/images/service_seo.jpg" class="img-fluid rounded blog-thumb" alt="How to Improve Your Website SEO" />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <h5 class="fw-bold mb-1">
+                <a asp-controller="Blog" asp-action="Detail" asp-route-slug="how-to-improve-your-website-seo">
+                    How to Improve Your Website SEO
+                </a>
+            </h5>
+            <p class="blog-meta text-muted small mb-2">Admin &nbsp;|&nbsp; May 18, 2026</p>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a asp-controller="Blog" asp-action="Detail" asp-route-slug="how-to-improve-your-website-seo" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+    </div>
+</div>

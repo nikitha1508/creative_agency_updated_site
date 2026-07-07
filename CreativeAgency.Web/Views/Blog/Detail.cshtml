@@ -1,16 +1,63 @@
 @{
-    ViewData["Title"] = "Blog Detail";
-    ViewData["Description"] = "Read the full article from the Creative Agency blog.";
-    var slug = ViewBag.Slug?.ToString();
+    var slug = ViewBag.Slug?.ToString() ?? "";
+
+    // Map slugs to article data
+    var articles = new Dictionary<string, (string Title, string Date, string Body)>
+    {
+        ["10-tips-for-a-successful-business"] = (
+            "10 Tips for a Successful Business",
+            "May 20, 2026",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        ),
+        ["how-to-improve-your-website-seo"] = (
+            "How to Improve Your Website SEO",
+            "May 18, 2026",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        )
+    };
+
+    var hasArticle = articles.ContainsKey(slug);
+    var article = hasArticle ? articles[slug] : ("Blog Post Not Found", "", "The article you are looking for does not exist.");
+
+    ViewData["Title"] = article.Item1 + " - Creative Agency Blog";
+    ViewData["Description"] = article.Item1 + " - Creative Agency Blog";
+
+    var heroImage = slug == "10-tips-for-a-successful-business"
+        ? "~/images/service_web.jpg"
+        : "~/images/service_seo.jpg";
 }
 
-<div class="container my-4"><h2>Blog Detail</h2>
-@if (slug != null)
-{
-    <p>You are viewing: @slug</p>
-}
-else
-{
-    <p>Placeholder blog post</p>
-}
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item"><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@slug</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Blog Detail -->
+<div class="container my-5">
+    <h2 class="page-heading mb-2">@article.Item1</h2>
+    @if (hasArticle)
+    {
+        <p class="blog-meta text-muted small mb-4">Admin &nbsp;|&nbsp; @article.Item2</p>
+        <img src="@heroImage" class="img-fluid rounded mb-4 w-100 blog-detail-img" alt="@article.Item1" />
+        @foreach (var paragraph in article.Item3.Split('\n', StringSplitOptions.RemoveEmptyEntries))
+        {
+            <p class="text-muted">@paragraph</p>
+        }
+    }
+    else
+    {
+        <div class="alert alert-warning">@article.Item3</div>
+    }
+
+    <div class="mt-4">
+        <a asp-controller="Blog" asp-action="Index" class="btn btn-outline-secondary">&larr; Back to Blog</a>
+    </div>
 </div>
